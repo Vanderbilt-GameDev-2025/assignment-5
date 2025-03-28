@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://c846lb5foqvbo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_54u01"]
+height = 2.14881
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hyfyh"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fylop"]
+material = SubResource("ShaderMaterial_hyfyh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u3fss"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_eoe7l"]
+material = SubResource("ShaderMaterial_u3fss")
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04767, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_54u01")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75516, -0.63188)
+current = true
+
+[node name="HP" type="Label" parent="."]
+offset_right = 236.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 33
+text = "Health: 0"
+
+[node name="Velocity" type="Label" parent="."]
+offset_top = 48.0
+offset_right = 162.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 33
+text = "Velocity: 0"
+
+[node name="Ammo" type="Label" parent="."]
+offset_top = 96.0
+offset_right = 162.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 33
+text = "Ammo: 20"
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0124589, 0, 0.00927305)
+mesh = SubResource("CapsuleMesh_fylop")
+skeleton = NodePath("Outline")
+
+[node name="Outline" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("CapsuleMesh_eoe7l")
+skeleton = NodePath("../..")
