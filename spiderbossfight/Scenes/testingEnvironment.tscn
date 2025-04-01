@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bhiwrg1fefow5"]
+[gd_scene load_steps=14 format=3 uid="uid://bhiwrg1fefow5"]
 
 [ext_resource type="PackedScene" uid="uid://c846lb5foqvbo" path="res://Scenes/player.tscn" id="1_dxgui"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="2_iwdrc"]
+[ext_resource type="PackedScene" uid="uid://dfg0ocr5v3lp0" path="res://Scenes/spider_boss.tscn" id="3_bpe77"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig10x"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -88,5 +89,7 @@ mesh = SubResource("BoxMesh_stgj7")
 shape = SubResource("ConcavePolygonShape3D_g5foa")
 
 [node name="Player" parent="." instance=ExtResource("1_dxgui")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00923157, 2.60572, -0.00519562)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.00923157, 2.60572, -14.239)
 script = ExtResource("2_iwdrc")
+
+[node name="spiderBoss" parent="." instance=ExtResource("3_bpe77")]
