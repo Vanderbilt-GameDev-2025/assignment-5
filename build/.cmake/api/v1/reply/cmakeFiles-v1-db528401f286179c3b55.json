@@ -1,0 +1,284 @@
+{
+	"globsDependent" : 
+	[
+		{
+			"expression" : "/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/*.h**",
+			"paths" : 
+			[
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/classes/editor_plugin_registration.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/classes/ref.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/classes/wrapped.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/binder_common.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/builtin_ptrcall.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/class_db.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/defs.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/engine_ptrcall.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/error_macros.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/math.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/memory.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/method_bind.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/method_ptrcall.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/mutex_lock.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/object.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/object_id.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/print_string.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/property_info.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/core/type_info.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/godot.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/cowdata.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/hash_map.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/hash_set.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/hashfuncs.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/list.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/local_vector.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/pair.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/rb_map.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/rb_set.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/rid_owner.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/safe_refcount.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/search_array.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/self_list.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/sort_array.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/spin_lock.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/thread_work_pool.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/vector.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/vmap.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/templates/vset.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/aabb.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/array_helpers.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/basis.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/callable_custom.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/callable_method_pointer.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/char_string.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/char_utils.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/color.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/color_names.inc.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/plane.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/projection.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/quaternion.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/rect2.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/rect2i.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/transform2d.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/transform3d.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/typed_array.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/variant.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/vector2.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/vector2i.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/vector3.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/vector3i.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/vector4.hpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/include/godot_cpp/variant/vector4i.hpp"
+			],
+			"recurse" : true
+		},
+		{
+			"expression" : "/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/*.c**",
+			"paths" : 
+			[
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/classes/editor_plugin_registration.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/classes/low_level.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/classes/wrapped.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/core/class_db.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/core/error_macros.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/core/memory.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/core/method_bind.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/core/object.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/core/print_string.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/godot.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/aabb.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/basis.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/callable_custom.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/callable_method_pointer.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/char_string.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/color.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/packed_arrays.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/plane.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/projection.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/quaternion.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/rect2.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/rect2i.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/transform2d.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/transform3d.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/variant.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/vector2.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/vector2i.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/vector3.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/vector3i.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/vector4.cpp",
+				"/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp/src/variant/vector4i.cpp"
+			],
+			"recurse" : true
+		}
+	],
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/build/CMakeFiles/3.31.5/CMakeSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/build/CMakeFiles/3.31.5/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake"
+		},
+		{
+			"path" : "cmake/godotcpp.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindPython3.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindPython/Support.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "cmake/common_compiler_flags.cmake"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/build",
+		"source" : "/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/godot-cpp"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}

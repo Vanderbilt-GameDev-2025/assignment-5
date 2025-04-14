@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+3026fb8fc796a7744f740803ddfed537 gen/include/godot_cpp/core/ext_wrappers.gen.inc

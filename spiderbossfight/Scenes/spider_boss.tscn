@@ -128,69 +128,53 @@ magnet = Vector3(0, 10, 0)
 target_node = NodePath("../../BackL_IK_Trgt")
 script = ExtResource("2_811jp")
 
-[node name="FrontR_IK_Trgt" type="Marker3D" parent="spider_armature" index="1" node_paths=PackedStringArray("step_target", "adjacent_leg", "opposite_leg")]
+[node name="FrontR_IK_Trgt" type="Marker3D" parent="spider_armature" index="1" node_paths=PackedStringArray("step_target")]
 transform = Transform3D(3.10807, 0, 0, 0, 3.10807, 0, 0, 0, 3.10807, 3.97411, 0.0364237, -3.86799)
 top_level = true
 script = ExtResource("4_142ws")
 step_target = NodePath("../StepTargetContainer/FrontR_Step_Trgt")
-adjacent_leg = NodePath("../FrontL_IK_Trgt")
-opposite_leg = NodePath("../BackL_IK_Trgt")
 
-[node name="MidFrontR_IK_Trgt" type="Marker3D" parent="spider_armature" index="2" node_paths=PackedStringArray("step_target", "adjacent_leg", "opposite_leg")]
+[node name="MidFrontR_IK_Trgt" type="Marker3D" parent="spider_armature" index="2" node_paths=PackedStringArray("step_target")]
 transform = Transform3D(3.10807, 0, 0, 0, 3.10807, 0, 0, 0, 3.10807, 3.08384, 0.037905, -1.908)
 top_level = true
 script = ExtResource("4_142ws")
 step_target = NodePath("../StepTargetContainer/MidFrontR_Step_Trgt")
-adjacent_leg = NodePath("../MidFrontL_IK_Trgt")
-opposite_leg = NodePath("../MidBackL_IK_Trgt")
 
-[node name="MidBackR_IK_Trgt" type="Marker3D" parent="spider_armature" index="3" node_paths=PackedStringArray("step_target", "adjacent_leg", "opposite_leg")]
+[node name="MidBackR_IK_Trgt" type="Marker3D" parent="spider_armature" index="3" node_paths=PackedStringArray("step_target")]
 transform = Transform3D(3.10807, 0, 0, 0, 3.10807, 0, 0, 0, 3.10807, 3.08321, 0.037905, -0.217565)
 top_level = true
 script = ExtResource("4_142ws")
 step_target = NodePath("../StepTargetContainer/MidBackR_Step_Trgt")
-adjacent_leg = NodePath("../MidBackL_IK_Trgt")
-opposite_leg = NodePath("../MidFrontL_IK_Trgt")
 
-[node name="BackR_IK_Trgt" type="Marker3D" parent="spider_armature" index="4" node_paths=PackedStringArray("step_target", "adjacent_leg", "opposite_leg")]
+[node name="BackR_IK_Trgt" type="Marker3D" parent="spider_armature" index="4" node_paths=PackedStringArray("step_target")]
 transform = Transform3D(3.10807, 0, 0, 0, 3.10807, 0, 0, 0, 3.10807, 3.38551, 0.037905, 1.32104)
 top_level = true
 script = ExtResource("4_142ws")
 step_target = NodePath("../StepTargetContainer/BackR_Step_Trgt")
-adjacent_leg = NodePath("../BackL_IK_Trgt")
-opposite_leg = NodePath("../FrontL_IK_Trgt")
 
-[node name="FrontL_IK_Trgt" type="Marker3D" parent="spider_armature" index="5" node_paths=PackedStringArray("step_target", "adjacent_leg", "opposite_leg")]
+[node name="FrontL_IK_Trgt" type="Marker3D" parent="spider_armature" index="5" node_paths=PackedStringArray("step_target")]
 transform = Transform3D(3.10807, 0, 0, 0, 3.10807, 0, 0, 0, 3.10807, -3.97522, 0.037905, -3.86644)
 top_level = true
 script = ExtResource("4_142ws")
 step_target = NodePath("../StepTargetContainer/FrontL_Step_Trgt")
-adjacent_leg = NodePath("../FrontR_IK_Trgt")
-opposite_leg = NodePath("../BackR_IK_Trgt")
 
-[node name="MidFrontL_IK_Trgt" type="Marker3D" parent="spider_armature" index="6" node_paths=PackedStringArray("step_target", "adjacent_leg", "opposite_leg")]
+[node name="MidFrontL_IK_Trgt" type="Marker3D" parent="spider_armature" index="6" node_paths=PackedStringArray("step_target")]
 transform = Transform3D(3.10807, 0, 0, 0, 3.10807, 0, 0, 0, 3.10807, -3.08321, 0.037905, -1.90835)
 top_level = true
 script = ExtResource("4_142ws")
 step_target = NodePath("../StepTargetContainer/MidFrontL_Step_Trgt")
-adjacent_leg = NodePath("../MidFrontR_IK_Trgt")
-opposite_leg = NodePath("../MidBackR_IK_Trgt")
 
-[node name="MidBackL_IK_Trgt" type="Marker3D" parent="spider_armature" index="7" node_paths=PackedStringArray("step_target", "adjacent_leg", "opposite_leg")]
+[node name="MidBackL_IK_Trgt" type="Marker3D" parent="spider_armature" index="7" node_paths=PackedStringArray("step_target")]
 transform = Transform3D(3.10807, 0, 0, 0, 3.10807, 0, 0, 0, 3.10807, -3.08321, 0.037905, -0.217565)
 top_level = true
 script = ExtResource("4_142ws")
 step_target = NodePath("../StepTargetContainer/MidBackL_Step_Trgt")
-adjacent_leg = NodePath("../MidBackR_IK_Trgt")
-opposite_leg = NodePath("../MidFrontR_IK_Trgt")
 
-[node name="BackL_IK_Trgt" type="Marker3D" parent="spider_armature" index="8" node_paths=PackedStringArray("step_target", "adjacent_leg", "opposite_leg")]
+[node name="BackL_IK_Trgt" type="Marker3D" parent="spider_armature" index="8" node_paths=PackedStringArray("step_target")]
 transform = Transform3D(3.10807, 0, 0, 0, 3.10807, 0, 0, 0, 3.10807, -3.38469, 0.037905, 1.32093)
 top_level = true
 script = ExtResource("4_142ws")
 step_target = NodePath("../StepTargetContainer/BackL_Step_Trgt")
-adjacent_leg = NodePath("../BackR_IK_Trgt")
-opposite_leg = NodePath("../FrontR_IK_Trgt")
 
 [node name="StepTargetContainer" type="Node3D" parent="spider_armature" index="9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.089, -1.083, 0.425)
@@ -266,3 +250,24 @@ transform = Transform3D(0.998342, 0.057564, 0, -0.0574686, 0.996686, 0.057564, 0
 target_position = Vector3(0, -2.5, 0)
 script = ExtResource("4_1nq62")
 step_target = NodePath("../BackL_Step_Trgt")
+
+[node name="LegHandler" type="LegHandler" parent="." index="1"]
+time_offset = 0.02
+step_distance = 1.5
+checkTime = 0.125
+leg_1 = NodePath("../spider_armature/FrontR_IK_Trgt")
+leg_2 = NodePath("../spider_armature/MidFrontR_IK_Trgt")
+leg_3 = NodePath("../spider_armature/MidBackR_IK_Trgt")
+leg_4 = NodePath("../spider_armature/BackR_IK_Trgt")
+leg_5 = NodePath("../spider_armature/FrontL_IK_Trgt")
+leg_6 = NodePath("../spider_armature/MidFrontL_IK_Trgt")
+leg_7 = NodePath("../spider_armature/MidBackL_IK_Trgt")
+leg_8 = NodePath("../spider_armature/BackL_IK_Trgt")
+legtrgt_1 = NodePath("../spider_armature/StepTargetContainer/FrontR_Step_Trgt")
+legtrgt_2 = NodePath("../spider_armature/StepTargetContainer/MidFrontR_Step_Trgt")
+legtrgt_3 = NodePath("../spider_armature/StepTargetContainer/MidBackR_Step_Trgt")
+legtrgt_4 = NodePath("../spider_armature/StepTargetContainer/BackR_Step_Trgt")
+legtrgt_5 = NodePath("../spider_armature/StepTargetContainer/FrontL_Step_Trgt")
+legtrgt_6 = NodePath("../spider_armature/StepTargetContainer/MidFrontL_Step_Trgt")
+legtrgt_7 = NodePath("../spider_armature/StepTargetContainer/MidBackL_Step_Trgt")
+legtrgt_8 = NodePath("../spider_armature/StepTargetContainer/BackL_Step_Trgt")

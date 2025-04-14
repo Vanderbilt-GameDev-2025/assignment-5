@@ -1,7 +1,6 @@
 #include "register_types.h"
 
-//#include "keyinput.h"
-//#include "modifyspeed.h"
+#include "leg_handler.h"
 
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
@@ -14,8 +13,7 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
 		return;
 	}
 
-	//GDREGISTER_CLASS(KeyInput);
-	//GDREGISTER_CLASS(ModifySpeed);
+	GDREGISTER_CLASS(LegHandler);
 }
 
 void uninitialize_example_module(ModuleInitializationLevel p_level) {

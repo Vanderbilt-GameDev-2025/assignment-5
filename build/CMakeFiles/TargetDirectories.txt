@@ -1,0 +1,3 @@
+/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/build/CMakeFiles/godot-cpp.dir
+/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/build/CMakeFiles/edit_cache.dir
+/Users/cartermalonson/Desktop/GameEngProject5/assignment-5/build/CMakeFiles/rebuild_cache.dir
