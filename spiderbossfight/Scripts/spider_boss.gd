@@ -93,10 +93,8 @@ func _die() -> void:
 
 
 func _on_detection_field_body_entered(body: Node3D) -> void:
-	print("entered")
 	target = body
 
 
 func _on_detection_field_body_exited(body: Node3D) -> void:
-	print("exited")
 	target = null

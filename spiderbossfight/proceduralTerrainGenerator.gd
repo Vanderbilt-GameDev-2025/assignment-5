@@ -1,6 +1,9 @@
 @tool
 extends MeshInstance3D
 
+#Credit: https://www.youtube.com/watch?v=XOLac92RS64
+#Procedural Terrain Generator in Godot 4.1
+
 @export_range(20, 400, 1) var Terrain_Size := 100
 @export_range(1, 100, 1) var resolution := 30
 
