@@ -102,7 +102,6 @@ void LegHandler::_ready() {
     leg_array = {leg_1, leg_2, leg_3, leg_4, leg_5, leg_6, leg_7, leg_8};
     legtrgt_array = {legtrgt_1, legtrgt_2, legtrgt_3, legtrgt_4, legtrgt_5, legtrgt_6, legtrgt_7, legtrgt_8};
     validateLegs();
-    print_line(handlerReady);
 }
 
 void LegHandler::_exit_tree() {

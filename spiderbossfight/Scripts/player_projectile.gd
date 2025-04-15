@@ -2,7 +2,7 @@ extends Area3D
 
 var velocity = Vector3.ZERO
 var speed = 20.0
-var dmg = 0
+var dmg = 0.0
 var playerRef
 
 # Called when the node enters the scene tree for the first time.
