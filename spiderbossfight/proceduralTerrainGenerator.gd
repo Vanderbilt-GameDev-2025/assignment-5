@@ -7,6 +7,10 @@ extends MeshInstance3D
 @export_range(20, 400, 1) var Terrain_Size := 100
 @export_range(1, 100, 1) var resolution := 30
 
+@export_range(0, 100, 1) var noise_zoom:= 0.0  # Zoom level of noise (higher = more zoomed-in detail)
+@export_range(-100.0, 100.0, 1.0) var noise_focus_x: float = 0.0
+@export_range(-100.0, 100.0, 1.0) var noise_focus_y: float = 0.0
+
 const centerOffset := 0.5
 @export var Terrain_Max_Height = 5
 @export var noiseOffset = 0.5
@@ -32,7 +36,9 @@ func generate_terrain():
 			var percent = Vector2(x,z)/resolution
 			var pointOnMesh = Vector3((percent.x - centerOffset), 0, (percent.y - centerOffset))
 			var vertex = pointOnMesh * Terrain_Size
-			vertex.y = n.get_noise_2d(vertex.x * noiseOffset, vertex.z * noiseOffset) * Terrain_Max_Height
+			var noise_x = (vertex.x * noiseOffset + get_noise_focus().x) * (noise_zoom / 100)
+			var noise_z = (vertex.z * noiseOffset + get_noise_focus().y) * (noise_zoom / 100)
+			vertex.y = n.get_noise_2d(noise_x, noise_z) * Terrain_Max_Height
 			var uv = Vector2()
 			uv.x = percent.x
 			uv.y = percent.y
@@ -67,14 +73,19 @@ var last_res = 0
 var last_size = 0
 var last_height = 0
 var last_offset = 0
+var last_zoom = 0
+var last_focus = Vector2.ZERO
 
 func _process(delta: float) -> void:
-	if (resolution != last_res || Terrain_Size != last_size || Terrain_Max_Height != last_height || noiseOffset != last_offset):
+	if (resolution != last_res || Terrain_Size != last_size || Terrain_Max_Height != 
+	last_height || noiseOffset != last_offset || noise_zoom != last_zoom || get_noise_focus() != last_focus):
 		generate_terrain()
 		last_res = resolution
 		last_size = Terrain_Size
 		last_height = Terrain_Max_Height
 		last_offset = noiseOffset
+		last_zoom = noise_zoom
+		last_focus = get_noise_focus()
 	
 	if remove_collision:
 		clear_collision()
@@ -91,3 +102,6 @@ func clear_collision():
 	if get_child_count() > 0:
 		for i in get_children():
 			i.free()
+
+func get_noise_focus() -> Vector2:
+	return Vector2(noise_focus_x, noise_focus_y)
