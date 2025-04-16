@@ -59,8 +59,8 @@ func generate_terrain():
 	a_mesh = surfTool.commit()
 	
 	mesh = a_mesh
-	print("mesh generated")
 	update_shader()
+	_update_collision(a_mesh)
 	
 
 func update_shader():
@@ -105,3 +105,11 @@ func clear_collision():
 
 func get_noise_focus() -> Vector2:
 	return Vector2(noise_focus_x, noise_focus_y)
+
+func _update_collision(meshData: ArrayMesh) -> void:
+	var static_body = $StaticBody3D
+	if static_body && static_body is StaticBody3D:
+		var shape = meshData.create_trimesh_shape()
+		var collider = static_body.get_node("CollisionShape3D") if static_body.has_node("CollisionShape3D") else null
+		if collider && collider is CollisionShape3D:
+			collider.shape = shape
