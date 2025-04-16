@@ -273,7 +273,7 @@ step_target = NodePath("../BackL_Step_Trgt")
 
 [node name="LegHandler" type="LegHandler" parent="." index="9"]
 time_offset = 0.02
-step_distance = 1.5
+checkTime = -54.5
 leg_1 = NodePath("../FrontR_IK_Trgt")
 leg_2 = NodePath("../MidFrontR_IK_Trgt")
 leg_3 = NodePath("../MidBackR_IK_Trgt")

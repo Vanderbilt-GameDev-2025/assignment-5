@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c846lb5foqvbo"]
+[gd_scene load_steps=7 format=3 uid="uid://c846lb5foqvbo"]
+
+[ext_resource type="Texture2D" uid="uid://cs86cg67644gm" path="res://Assets/crosshair.png" id="1_r703a"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_54u01"]
 height = 2.14881
@@ -23,25 +25,45 @@ shape = SubResource("CapsuleShape3D_54u01")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75516, -0.63188)
 current = true
 
-[node name="HP" type="Label" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HP" type="Label" parent="CanvasLayer"]
 offset_right = 236.0
 offset_bottom = 131.0
 theme_override_font_sizes/font_size = 33
 text = "Health: 0"
 
-[node name="Velocity" type="Label" parent="."]
+[node name="Velocity" type="Label" parent="CanvasLayer"]
 offset_top = 48.0
 offset_right = 162.0
 offset_bottom = 94.0
 theme_override_font_sizes/font_size = 33
 text = "Velocity: 0"
 
-[node name="Ammo" type="Label" parent="."]
+[node name="Ammo" type="Label" parent="CanvasLayer"]
 offset_top = 96.0
 offset_right = 162.0
 offset_bottom = 142.0
 theme_override_font_sizes/font_size = 33
 text = "Ammo: 20"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.486111
+anchor_bottom = 0.475309
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_r703a")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0124589, 0, 0.00927305)

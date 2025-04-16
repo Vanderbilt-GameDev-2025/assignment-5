@@ -7,9 +7,9 @@ const MOUSE_SENSITIVITY = 0.2
 
 @export var projectile : PackedScene = preload("res://Scenes/playerProjectile.tscn")
 @onready var camera = $Camera3D
-@onready var HPlabel = $HP
-@onready var ammolabel = $Ammo
-@onready var velocityLabel = $Velocity
+@onready var HPlabel = $CanvasLayer/HP
+@onready var ammolabel = $CanvasLayer/Ammo
+@onready var velocityLabel = $CanvasLayer/Velocity
 
 var yaw = 0  # Horizontal rotation (left-right)
 var pitch = 0  # Vertical rotation (up-down)
