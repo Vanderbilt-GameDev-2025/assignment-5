@@ -47,7 +47,7 @@ offset_bottom = 142.0
 theme_override_font_sizes/font_size = 33
 text = "Ammo: 20"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="Crosshair" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
