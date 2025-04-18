@@ -74,9 +74,8 @@ func _processAI(delta: float) -> void:
 	var ai_direction: Vector2
 	if target:
 		move(self.global_position.direction_to(target.global_position))
-		if facingTarget:
+		if isFacingTarget():
 			ai_direction = determinAIdirection()
-			face_target(delta)
 			_handleMovements(delta, ai_direction)
 		else:
 			face_target(delta)
@@ -122,12 +121,7 @@ func _basis_from_normal(normal: Vector3) -> Basis:
 func face_target(delta: float) -> void:
 	if _direction:
 		_theta = wrapf(atan2(_direction.x, _direction.z) - self.rotation.y, -PI, PI)
-		if abs(_theta) < 0.01:
-			facingTarget = true
-		else:
-			facingTarget = false
-			rotate_object_local(Vector3.UP, clamp(rotation_speed * delta, 0, abs(_theta)) * sign(_theta))
-
+		rotate_object_local(Vector3.UP, clamp(rotation_speed * delta, 0, abs(_theta)) * sign(_theta))
 
 func _on_health_handler_death() -> void:
 	_die()
@@ -155,3 +149,10 @@ func _start():
 
 func _on_timer_timeout() -> void:
 	_start()
+
+func isFacingTarget() -> bool:
+	if _direction:
+		_theta = wrapf(atan2(_direction.x, _direction.z) - self.rotation.y, -PI, PI)
+		return abs(_theta) < 0.001
+	else:
+		return false
