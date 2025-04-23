@@ -1,7 +1,7 @@
 extends Area3D
 
 var velocity = Vector3.ZERO
-var speed = 20.0
+var speed = 50.0
 var dmg = 0.0
 var playerRef
 
@@ -36,3 +36,9 @@ func set_playerRef(body: Node3D):
 
 func set_velocity(dir: Vector3):
 	velocity = dir.normalized() * speed
+
+func spider_shoot(damage: float, target_pos: Vector3):
+	print("Shoot")
+	set_damage(damage)
+	var direction = self.global_position.direction_to(target_pos)
+	set_velocity(direction * speed)

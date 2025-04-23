@@ -4,9 +4,16 @@ signal spider_death
 
 @export var is_player_controlled := true
 @export var is_player_position_known := true
+@export var spiderProjectile : PackedScene = preload("res://Scenes/spider_projectile.tscn")
 
 var target
 var _startFlag := false
+
+var enemy_damage_m = 20.0
+var enemy_damage_r = 10.0
+
+var curShootCooldown = 0.0
+var shootCooldown = 1.0
 
 @export var playerTargetRef : CharacterBody3D
 
@@ -20,6 +27,7 @@ var facingTarget : bool = false
 
 @export var groundOffset: float = 1.0
 @onready var groundDetector = $GroundDetector
+@onready var projOriginPoint = $projectileOrigin
 
 @onready var FrontL_Trgt = $FrontL_IK_Trgt
 @onready var FrontR_Trgt = $FrontR_IK_Trgt
@@ -61,6 +69,8 @@ func _process(delta: float) -> void:
 		_processPlayer(delta)
 	else:
 		_processAI(delta)
+	
+	updateShootCooldown(delta)
 
 func _processPlayer(delta: float) -> void:
 	_alignToGround(delta)
@@ -68,8 +78,9 @@ func _processPlayer(delta: float) -> void:
 	var adir := Input.get_axis("R(ALT)", "L(ALT)")
 	var dir := Input.get_axis("Down(ALT)", "Up(ALT)")
 	face_target(delta)
-	print(dir)
 	_handleMovements(delta, Vector2(adir, dir))
+	if Input.is_action_just_pressed("Lclick"):
+		shoot()
 
 func _processAI(delta: float) -> void:
 	_alignToGround(delta)
@@ -79,6 +90,7 @@ func _processAI(delta: float) -> void:
 		if isFacingTarget():
 			ai_direction = determinAIdirection()
 			_handleMovements(delta, ai_direction)
+			shoot()
 		else:
 			face_target(delta)
 
@@ -156,6 +168,45 @@ func _on_timer_timeout() -> void:
 func isFacingTarget() -> bool:
 	if _direction:
 		_theta = wrapf(atan2(_direction.x, _direction.z) - self.rotation.y, -PI, PI)
-		return abs(_theta) < 0.001
+		return abs(_theta) < 0.01
 	else:
 		return false
+
+func shoot() -> void:
+	if !canShoot():
+		return
+	
+	if spiderProjectile == null:
+		print("Cannot spawn venomball: Scene is null!")
+		return
+		
+	var venomBall = spiderProjectile.instantiate()
+	if venomBall == null:
+		print("venomBall instantiation failed!")
+		return
+
+	if target == null:
+		print("No valid target for venomBall!")
+		return
+	
+	if venomBall.has_method("spider_shoot"):
+		get_tree().current_scene.add_sibling(venomBall)  # Or use add_sibling(fireball) if needed
+		venomBall.global_transform.origin = projOriginPoint.global_position   # 3D position
+		venomBall.call("spider_shoot", enemy_damage_r, target.global_transform.origin)
+		startShootCooldown()
+		
+
+func updateShootCooldown(delta :float):
+	if curShootCooldown <= 0.0:
+		return
+	else:
+		curShootCooldown -= delta
+
+func startShootCooldown():
+	curShootCooldown = shootCooldown
+
+func canShoot() -> bool:
+	if curShootCooldown <= 0.0:
+		return true
+	
+	return false

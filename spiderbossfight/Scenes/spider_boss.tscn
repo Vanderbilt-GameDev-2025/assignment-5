@@ -319,6 +319,9 @@ script = ExtResource("8_q066j")
 enemyHealth = 100.0
 enemyMaxHealth = 100.0
 
+[node name="projectileOrigin" type="Node3D" parent="." index="13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33472, -2.01356)
+
 [connection signal="body_entered" from="DetectionField" to="." method="_on_detection_field_body_entered"]
 [connection signal="body_exited" from="DetectionField" to="." method="_on_detection_field_body_exited"]
 [connection signal="death" from="SpiderHitbox/HealthHandler" to="." method="_on_health_handler_death"]

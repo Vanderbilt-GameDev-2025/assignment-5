@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdwu8ftedaeh3"]
+
+[ext_resource type="Script" path="res://Scripts/player_projectile.gd" id="1_vh57u"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6rjgg"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hkupp"]
+noise_type = 0
+seed = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mpqwc"]
+noise = SubResource("FastNoiseLite_hkupp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6yiqw"]
+albedo_color = Color(0, 1, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 0.35
+emission_texture = SubResource("NoiseTexture2D_mpqwc")
+
+[sub_resource type="SphereMesh" id="SphereMesh_cj1cl"]
+material = SubResource("StandardMaterial3D_6yiqw")
+
+[node name="spiderProjectile" type="Area3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_vh57u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_6rjgg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_cj1cl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

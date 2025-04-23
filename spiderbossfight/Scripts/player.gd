@@ -61,8 +61,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Space") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
-	#if Input.is_action_just_pressed("Esc"):
-	#	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if Input.is_action_just_pressed("Esc"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	if Input.is_action_just_pressed("Lclick") && Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -99,7 +99,7 @@ func updateCooldown(delta: float):
 #Health based methods
 func die():
 	player_death.emit()
-	queue_free()
+	#queue_free()
 
 func updateHealth(deltaHP: float) -> void:
 	if playerHP + deltaHP <= 0:
