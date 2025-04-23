@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 
+# Constants
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.2
@@ -13,6 +14,10 @@ const MOUSE_SENSITIVITY = 0.2
 
 var yaw = 0  # Horizontal rotation (left-right)
 var pitch = 0  # Vertical rotation (up-down)
+
+# Signals
+signal player_death
+signal ammo_empty
 
 #Player variables
 var playerHP = 0
@@ -56,8 +61,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Space") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
-	if Input.is_action_just_pressed("Esc"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#if Input.is_action_just_pressed("Esc"):
+	#	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	if Input.is_action_just_pressed("Lclick") && Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -93,6 +98,7 @@ func updateCooldown(delta: float):
 
 #Health based methods
 func die():
+	player_death.emit()
 	queue_free()
 
 func updateHealth(deltaHP: float) -> void:
@@ -128,7 +134,8 @@ func get_speed_mod() -> float:
 #Combat Methods
 func shoot():
 	if curAmmo <= 0:
-		reloadWeapon()
+		#reloadWeapon()
+		ammo_empty.emit()
 	elif canShoot():
 		if projectile:
 			var proj = projectile.instantiate()

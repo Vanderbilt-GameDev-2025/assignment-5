@@ -1,5 +1,7 @@
 extends Node3D
 
+signal spider_death
+
 @export var is_player_controlled := true
 @export var is_player_position_known := true
 
@@ -127,6 +129,7 @@ func _on_health_handler_death() -> void:
 	_die()
 
 func _die() -> void:
+	spider_death.emit()
 	queue_free()
 
 
