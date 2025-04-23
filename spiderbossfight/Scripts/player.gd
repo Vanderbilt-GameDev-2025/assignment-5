@@ -2,7 +2,6 @@ extends CharacterBody3D
 
 
 # Constants
-const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.2
 
@@ -12,23 +11,34 @@ const MOUSE_SENSITIVITY = 0.2
 @onready var ammolabel = $Ammo
 @onready var velocityLabel = $Velocity
 
+@export var SPEED : float = 5.0
+@export var addedSpeed : float = 2.0
+var sprintActive
+
 var yaw = 0  # Horizontal rotation (left-right)
 var pitch = 0  # Vertical rotation (up-down)
 
+# Audio Manager
+var audio_manager : AudioManager
+
 # Signals
 signal player_death
+signal player_shoot
 signal ammo_empty
+
+# Game state
+var game_active : bool
 
 #Player variables
 var playerHP = 0
-var HPmax = 20
+var HPmax = 50
 var curAmmo = 20
 var maxAmmo = 20
 var playerDMG = 10
 
 var shortReloadCooldown = 0.5
 var longReloadCooldown = 0.75
-var cooldown = 1
+var cooldown = 0.8
 var curcooldown = 0
 
 var currentSpeed
@@ -36,8 +46,13 @@ var speedModifier
 
 
 func _ready() -> void:
+	audio_manager = get_node("/root/Root/AudioManager")
+	
+	game_active = false
+	sprintActive = false
+	
 	updateHealth(HPmax)
-	currentSpeed = SPEED
+	currentSpeed = getSpeed()
 	set_speed_mod(5.0)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -53,6 +68,9 @@ func _input(event):
 		camera.rotation_degrees.x = pitch  # Rotate camera up/down
 
 func _physics_process(delta: float) -> void:
+	if (!game_active):
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -60,6 +78,12 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("Space") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	
+	if Input.is_action_just_pressed("Shift"):
+		toggleSprint()
+	
+	if Input.is_action_just_released("Shift"):
+		toggleSprint()
 	
 	if Input.is_action_just_pressed("Esc"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -75,11 +99,11 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("Left", "Right", "Up", "Down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * getSpeed()
+		velocity.z = direction.z * getSpeed()
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, getSpeed())
+		velocity.z = move_toward(velocity.z, 0, getSpeed())
 	
 	updateVellabel(velocity)
 	updateCooldown(delta)
@@ -98,6 +122,7 @@ func updateCooldown(delta: float):
 
 #Health based methods
 func die():
+	audio_manager.play("PlayerDeath", global_position)
 	player_death.emit()
 	#queue_free()
 
@@ -112,6 +137,7 @@ func updateHealth(deltaHP: float) -> void:
 	updateHPlabel()
 
 func take_damage(DMG: float):
+	audio_manager.play("PlayerHurt", global_position)
 	updateHealth(-DMG)
 
 #Label methods
@@ -135,6 +161,7 @@ func get_speed_mod() -> float:
 func shoot():
 	if curAmmo <= 0:
 		#reloadWeapon()
+		audio_manager.play("OutOfAmmo", global_position)
 		ammo_empty.emit()
 	elif canShoot():
 		if projectile:
@@ -152,6 +179,8 @@ func shoot():
 			if proj.has_method("set_velocity"):
 				proj.set_velocity(direction * 20)
 				curAmmo -= 1
+				print(audio_manager)
+				audio_manager.play("PlayerShoot", global_position)
 				startCooldown()
 	
 	updateAmmolabel()
@@ -162,3 +191,22 @@ func reloadWeapon():
 #Boolean methods
 func canShoot():
 	return curcooldown == 0
+
+func toggleSprint():
+	if !sprintActive:
+		sprintActive = true
+	else:
+		sprintActive = false
+
+func getSpeed() -> float:
+	if sprintActive:
+		return SPEED + addedSpeed
+	else:
+		return SPEED
+
+
+func _on_timer_timeout() -> void:
+	game_active = true
+
+func _on_game_end() -> void:
+	game_active = false

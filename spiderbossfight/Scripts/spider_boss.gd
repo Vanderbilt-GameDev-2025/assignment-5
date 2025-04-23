@@ -1,6 +1,12 @@
 extends Node3D
 
+# Audio Manager
+var audio_manager : AudioManager
+
+# signals
 signal spider_death
+
+var game_active : bool
 
 @export var is_player_controlled := true
 @export var is_player_position_known := true
@@ -38,6 +44,10 @@ var timeAcc = 0.0
 var timeCooldown = 5.0
 
 func _ready() -> void:
+	audio_manager = get_node("/root/Root/AudioManager")
+	
+	game_active = false
+	
 	if is_player_position_known:
 		target = playerTargetRef
 	else:
@@ -50,6 +60,8 @@ func _process(delta: float) -> void:
 	if !_startFlag:
 		return
 	
+	if (!game_active):
+		return
 	
 	if (timeAcc >= timeCooldown):
 		var player2DpositionVec = Vector2(playerTargetRef.global_position.x, playerTargetRef.global_position.z)
@@ -141,6 +153,8 @@ func _on_health_handler_death() -> void:
 	_die()
 
 func _die() -> void:
+	audio_manager.play("SpiderDeath", global_position)
+	audio_manager.play("Win", global_position)
 	spider_death.emit()
 	queue_free()
 
@@ -163,6 +177,7 @@ func _start():
 	_startFlag = true
 
 func _on_timer_timeout() -> void:
+	game_active = true
 	_start()
 
 func isFacingTarget() -> bool:
@@ -193,6 +208,8 @@ func shoot() -> void:
 		get_tree().current_scene.add_sibling(venomBall)  # Or use add_sibling(fireball) if needed
 		venomBall.global_transform.origin = projOriginPoint.global_position   # 3D position
 		venomBall.call("spider_shoot", enemy_damage_r, target.global_transform.origin)
+		
+		audio_manager.play("SpiderShoot", global_position)
 		startShootCooldown()
 		
 
@@ -210,3 +227,6 @@ func canShoot() -> bool:
 		return true
 	
 	return false
+
+func _on_game_end() -> void:
+	game_active = false
